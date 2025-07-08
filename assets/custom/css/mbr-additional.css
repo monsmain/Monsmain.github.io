@@ -1710,6 +1710,11 @@ justify-content: center; /* Button is centered on mobile */
   justify-content: center;
 }
 
-#social-icons-1 .icons-menu {
-  flex-wrap: nowrap !important;
+#social-icons-1 .media-container-row {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+#footer04-1k .media-container-row {
+  justify-content: center;
 }
