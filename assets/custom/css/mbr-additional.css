@@ -59,11 +59,7 @@ body {
 .display-7 > .mbr-iconfont {
   font-size: 1.75rem;
 }
-/* ---- Fluid typography for mobile devices ---- */
-/* 1.4 - font scale ratio ( bootstrap == 1.42857 ) */
-/* 100vw - current viewport width */
-/* (48 - 20)  48 == 48rem == 768px, 20 == 20rem == 320px(minimal supported viewport) */
-/* 0.65 - min scale variable, may vary */
+
 @media (max-width: 992px) {
   .display-1 {
     font-size: 4rem;
@@ -635,7 +631,7 @@ a:hover {
 .mbr-plan-header.bg-danger .mbr-plan-price-desc {
   color: #ffffff;
 }
-/* Scroll to top button*/
+
 .scrollToTop_wraper {
   display: none;
 }
@@ -1628,12 +1624,11 @@ a {
   color: #ffffff;
 }
 
-/* --- Final Correction for Donation Section --- */
 .wallet-address-wrapper {
 display: flex;
 align-items: center;
 justify-content: flex-start;
-gap: 1rem; /* Space between button and message */
+gap: 1rem; 
 min-height: 48px;
 }
 
@@ -1646,19 +1641,17 @@ justify-content: center;
 flex-shrink: 0;
 }
 
-/* The message is completely hidden by default */
 .copy-feedback-new {
-display: none; /* We use this property to hide it completely */
+display: none; 
 background-color: #28a745;
 color: white;
 padding: 6px 12px;
 border-radius: 6px;
 font-size: 0.9rem;
 white-space: nowrap;
-animation: fadeIn 0.4s; /* Simple animation to appear */
+animation: fadeIn 0.4s; 
 }
 
-/* This class is added with JavaScript to display the message */
 .copy-feedback-new.show {
 display: inline-block;
 }
@@ -1674,17 +1667,16 @@ opacity: 1;
 
 @media (max-width: 767px) {
 .wallet-address-wrapper {
-justify-content: center; /* Button is centered on mobile */
+justify-content: center; 
 }
 }
 
-/* Code for Sticky Menu on Mobile */
 @media (max-width: 991px) {
     .cid-tJS6tZXiPa {
-        position: -webkit-sticky; /* For Safari */
+        position: -webkit-sticky; 
         position: sticky;
         top: 0;
-        z-index: 1020; /* This ensures the menu stays on top of other content */
+        z-index: 1020; 
     }
 }
 
