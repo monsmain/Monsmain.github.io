@@ -1705,7 +1705,8 @@ justify-content: center; /* Button is centered on mobile */
     opacity: 0.8;
 }
 
-#social-icons-1 .col-12 {
-    display: flex;
-    justify-content: center;
+.cid-tJS6tZXiPa .icons-menu {
+    width: 100%;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
 }
