@@ -1704,3 +1704,7 @@ justify-content: center; /* Button is centered on mobile */
 .social-icons-footer .iconfont-wrapper:hover {
     opacity: 0.8;
 }
+
+#social-icons-1 .icons-menu {
+  flex-wrap: nowrap;
+}
