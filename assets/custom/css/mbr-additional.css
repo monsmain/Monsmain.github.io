@@ -1438,8 +1438,8 @@ a {
   display: flex;
   justify-content: center;
   position: relative;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 390px;
+  max-width: 390px;
 }
 @media (max-width: 768px) {
   .cid-uNpFu2nBZW .embla__slide {
