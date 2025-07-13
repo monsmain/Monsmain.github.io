@@ -1690,7 +1690,7 @@ justify-content: center;
 .social-icons-footer .iconfont-wrapper {
     color: #000000 !important;
     font-size: 1.8rem;
-    margin: 0 0.8rem;
+    margin: 0 0.6rem;
 }
 
 .social-icons-footer .iconfont-wrapper:hover {
@@ -1705,20 +1705,6 @@ justify-content: center;
 #social-icons-1 .icons-menu {
     flex-wrap: nowrap !important;
 }
-
-/* banner addddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd */
-.banner-container {
-    padding: 1rem 0;
-    text-align: center;
-    background-color: #ffffff;
-}
-
-
-
-
-
-
-
 
 body {
     background-color: #121212 !important;
