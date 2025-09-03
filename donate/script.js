@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 page_title: "Financial Support", main_title: "Support My Work", main_subtitle: "Your contribution empowers me to create more and better content. Every amount is valuable.", copy_button: "Copy", copied_button: "Copied!", footer_thanks: "Thank you for your support❤️"
             },
             fa: {
-                page_title: "حمایت مالی", main_title: "حمایت از فعالیت من", main_subtitle: "کمک شما به من انگیزه می‌دهد تا محتوای بهتر و بیشتری تولید کنم. هر مبلغی ارزشمند است.", copy_button: "کپی", copied_button: "کپی شد!", footer_thanks: "از حمایت شما سپاسگزارم❤️"
+                page_title: "حمایت مالی", main_title: "حمایت از فعالیت من", main_subtitle: "کمک شما به من انگیزه می‌دهد تا محتوای بهتر و بیشتری تولید کنم، هر مبلغی برای من ارزشمند است.", copy_button: "کپی", copied_button: "کپی شد!", footer_thanks: "از حمایت شما سپاسگزارم❤️"
             }
         },
         transition_delay: 500 
