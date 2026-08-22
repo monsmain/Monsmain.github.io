@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title data-i18n="meta.title">monsmain — توسعه‌دهنده و سازنده ابزارهای امنیتی</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="پورتفولیو monsmain — توسعه‌دهنده با تمرکز بر ابزارهای امنیتی، هک اخلاقی و Go.">
+  <meta property="og:title" content="monsmain — Developer & Security Tools Builder">
+  <meta property="og:description" content="Portfolio of monsmain — security tools builder, Go & Python developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://monsmain.github.io/">
+  <meta name="theme-color" content="#05070f">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body class="lang-fa">
+  <div id="transition-overlay" aria-hidden="true"></div>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav class="nav">
+    <a href="#" class="nav-logo">monsmain<span>_</span></a>
+
+    <button class="hamburger" id="hamburger" aria-label="منو" aria-expanded="false" data-i18n-attr="aria-label:ui.menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <button class="menu-overlay" id="menu-overlay" aria-label="بستن" tabindex="-1" data-i18n-attr="aria-label:ui.close"></button>
+
+    <div class="menu-panel" id="menu-panel" role="menu">
+      <ul class="menu-links">
+        <li><a href="#about" data-i18n="nav.about" role="menuitem">درباره من</a></li>
+        <li><a href="#projects" data-i18n="nav.projects" role="menuitem">پروژه‌ها</a></li>
+        <li><a href="#skills" data-i18n="nav.skills" role="menuitem">مهارت‌ها</a></li>
+        <li><a href="blog/" data-i18n="nav.blog" role="menuitem">بلاگ</a></li>
+        <li><a href="donate/" class="essential" data-i18n="nav.donate" role="menuitem">حمایت</a></li>
+        <li><a href="#contact" data-i18n="nav.contact" role="menuitem">تماس</a></li>
+      </ul>
+      <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="fa">FA</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <section class="hero reveal" id="home">
+      <p class="hero-greeting" data-i18n="hero.greeting">سلام، من</p>
+      <h1 class="hero-name">monsmain</h1>
+      <p class="hero-role" data-i18n="hero.role">توسعه‌دهنده و سازنده ابزارهای امنیتی</p>
+      <div class="hero-typed-wrap" aria-live="polite">
+        <span id="typed"></span>
+      </div>
+      <p class="hero-scroll" data-i18n="hero.scroll">برای کاوش اسکرول کنید</p>
+    </section>
+
+    <section class="reveal" id="about">
+      <div class="section-header">
+        <p class="section-subtitle" data-i18n="about.subtitle">چه کسی هستم</p>
+        <h2 class="section-title" data-i18n="about.title">درباره من</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p data-i18n="about.p1">دنیا پر از باگ است؛ من اینجام تا دیباگش کنم.</p>
+          <p data-i18n="about.p2">من عمدتاً با Go، Python و JavaScript کار می‌کنم.</p>
+          <p data-i18n="about.p3">من در حال یادگیری هک اخلاقی پیشرفته هستم.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <p class="stat-number" data-target="13">13</p>
+          <p class="stat-label" data-i18n="stats.repos">مخزن گیت‌هاب</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number" data-target="1">1</p>
+          <p class="stat-label" data-i18n="stats.years">سال تجربه</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number" data-target="36">36</p>
+          <p class="stat-label" data-i18n="stats.stars">ستاره گیت‌هاب</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number" data-target="9999">9999</p>
+          <p class="stat-label" data-i18n="stats.coffee">فنجان قهوه</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="projects">
+      <div class="section-header">
+        <p class="section-subtitle" data-i18n="projects.subtitle">چیزهایی که ساختم</p>
+        <h2 class="section-title" data-i18n="projects.title">پروژه‌های منتخب</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <p class="project-number">01</p>
+          <h3 class="project-title" data-i18n="projects.p1_title">uploader</h3>
+          <p class="project-desc" data-i18n="projects.p1_desc">Cloud storage app</p>
+          <div class="project-tags"><span class="project-tag">JavaScript</span><span class="project-tag">Cloudflare</span><span class="project-tag">Telegram Bot</span><span class="project-tag">R2</span></div>
+          <div class="project-links"><a href="https://github.com/monsmain/uploader" class="project-link" target="_blank" rel="noopener">↗ <span data-i18n="projects.view">مشاهده پروژه</span></a></div>
+        </div>
+        <div class="project-card">
+          <p class="project-number">02</p>
+          <h3 class="project-title" data-i18n="projects.p2_title">ighack</h3>
+          <p class="project-desc" data-i18n="projects.p2_desc">Instagram brute-force</p>
+          <div class="project-tags"><span class="project-tag">Go</span><span class="project-tag">Brute Force</span><span class="project-tag">Tor</span><span class="project-tag">Proxy</span></div>
+          <div class="project-links"><a href="https://github.com/monsmain/ighack" class="project-link" target="_blank" rel="noopener">↗ <span data-i18n="projects.view">مشاهده پروژه</span></a></div>
+        </div>
+        <div class="project-card">
+          <p class="project-number">03</p>
+          <h3 class="project-title" data-i18n="projects.p3_title">endpoint-scanner</h3>
+          <p class="project-desc" data-i18n="projects.p3_desc">Endpoint discovery</p>
+          <div class="project-tags"><span class="project-tag">Go</span><span class="project-tag">Network</span><span class="project-tag">Scanner</span></div>
+          <div class="project-links"><a href="https://github.com/monsmain/endpoint-scanner" class="project-link" target="_blank" rel="noopener">↗ <span data-i18n="projects.view">مشاهده پروژه</span></a></div>
+        </div>
+        <div class="project-card">
+          <p class="project-number">04</p>
+          <h3 class="project-title" data-i18n="projects.p4_title">app-sms-irani</h3>
+          <p class="project-desc" data-i18n="projects.p4_desc">SMS bomber</p>
+          <div class="project-tags"><span class="project-tag">Android</span><span class="project-tag">Kotlin</span><span class="project-tag">Go</span><span class="project-tag">API</span></div>
+          <div class="project-links"><a href="https://github.com/monsmain/app-sms-irani" class="project-link" target="_blank" rel="noopener">↗ <span data-i18n="projects.view">مشاهده پروژه</span></a></div>
+        </div>
+        <div class="project-card">
+          <p class="project-number">05</p>
+          <h3 class="project-title" data-i18n="projects.p5_title">User-Agents-Checker</h3>
+          <p class="project-desc" data-i18n="projects.p5_desc">UA checker</p>
+          <div class="project-tags"><span class="project-tag">Go</span><span class="project-tag">Browser</span><span class="project-tag">Checker</span></div>
+          <div class="project-links"><a href="https://github.com/monsmain/User-Agents-Checker" class="project-link" target="_blank" rel="noopener">↗ <span data-i18n="projects.view">مشاهده پروژه</span></a></div>
+        </div>
+        <div class="project-card">
+          <p class="project-number">06</p>
+          <h3 class="project-title" data-i18n="projects.p6_title">Refresher-Site</h3>
+          <p class="project-desc" data-i18n="projects.p6_desc">Site refresher</p>
+          <div class="project-tags"><span class="project-tag">Go</span><span class="project-tag">HTTP</span><span class="project-tag">Ping</span></div>
+          <div class="project-links"><a href="https://github.com/monsmain/Refresher-Site" class="project-link" target="_blank" rel="noopener">↗ <span data-i18n="projects.view">مشاهده پروژه</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="skills">
+      <div class="section-header">
+        <p class="section-subtitle" data-i18n="skills.subtitle">ابزارها و فناوری‌ها</p>
+        <h2 class="section-title" data-i18n="skills.title">مهارت‌های فنی</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill-category">
+          <p class="skill-category-title" data-i18n="skills.languages">زبان‌ها</p>
+          <div class="skill-list">
+            <span class="skill-item" data-i18n="skills.list.go">Go</span>
+            <span class="skill-item" data-i18n="skills.list.python">Python</span>
+            <span class="skill-item" data-i18n="skills.list.javascript">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <p class="skill-category-title" data-i18n="skills.security">امنیت</p>
+          <div class="skill-list">
+            <span class="skill-item" data-i18n="skills.list.ethical">هک اخلاقی</span>
+            <span class="skill-item" data-i18n="skills.list.bruteforce">Brute Force</span>
+            <span class="skill-item" data-i18n="skills.list.scanning">اسکنر شبکه</span>
+            <span class="skill-item" data-i18n="skills.list.tor">Tor / Proxy</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <p class="skill-category-title" data-i18n="skills.platforms">پلتفرم‌ها</p>
+          <div class="skill-list">
+            <span class="skill-item" data-i18n="skills.list.cloudflare">Cloudflare Workers</span>
+            <span class="skill-item" data-i18n="skills.list.android">Android Studio</span>
+            <span class="skill-item" data-i18n="skills.list.telegram">Telegram Bot</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <p class="skill-category-title" data-i18n="skills.tools">ابزارها و DevOps</p>
+          <div class="skill-list">
+            <span class="skill-item" data-i18n="skills.list.git">Git / GitHub</span>
+            <span class="skill-item" data-i18n="skills.list.linux">Linux</span>
+            <span class="skill-item" data-i18n="skills.list.bash">Bash</span>
+            <span class="skill-item" data-i18n="skills.list.vscode">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="contact">
+      <div class="section-header">
+        <p class="section-subtitle" data-i18n="contact.subtitle">بیایید با هم کار کنیم</p>
+        <h2 class="section-title" data-i18n="contact.title">در ارتباط باشید</h2>
+      </div>
+      <div class="contact-content">
+        <p class="contact-desc" data-i18n="contact.desc">پروژه‌ای در ذهن دارید؟ از هر یک از این پلتفرم‌ها با من در تماس باشید.</p>
+        <div class="social-links">
+          <a href="https://github.com/monsmain" target="_blank" rel="noopener" class="social-link" aria-label="GitHub" data-i18n-attr="aria-label:contact.github">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.46 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://t.me/monsmain" target="_blank" rel="noopener" class="social-link" aria-label="Telegram" data-i18n-attr="aria-label:contact.telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.504 1.201-.828 1.23-.704.065-1.239-.466-1.919-.917-1.067-.7-1.669-1.137-2.704-1.818-1.197-.789-.421-1.225.262-1.932.176-.183 3.227-2.959 3.288-3.209.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.914.49-1.302.48-.428-.008-1.252-.242-1.865-.442-.752-.244-1.349-.374-1.297-.789.027-.216.324-.437.892-.662 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="https://youtube.com/monsmain" target="_blank" rel="noopener" class="social-link" aria-label="YouTube" data-i18n-attr="aria-label:contact.youtube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://x.com/mons_main" target="_blank" rel="noopener" class="social-link" aria-label="X" data-i18n-attr="aria-label:contact.x">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-built" data-i18n="footer.built">ساخته شده با کد و اشتیاق</p>
+    <p data-i18n="footer.copyright">© 2026 monsmain. تمام حقوق محفوظ است.</p>
+  </footer>
+
+  <button class="back-to-top" id="back-top" aria-label="Back to top" data-i18n-attr="aria-label:footer.back_top">↑</button>
+
+  <script src="assets/js/i18n.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
