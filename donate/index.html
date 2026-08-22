@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" data-i18n-attr="content:donate.main_subtitle" content="Support monsmain — donate with cryptocurrency or Iranian Rial.">
+  <meta name="theme-color" content="#05070f">
+  <meta property="og:title" content="monsmain — Financial Support">
+  <meta property="og:description" content="Your contribution empowers me to create more and better content.">
+  <meta property="og:type" content="website">
+  <title data-i18n="donate.page_title">حمایت مالی</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body class="lang-fa">
+  <div id="transition-overlay" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- QR modal -->
+  <div id="qr-modal" class="qr-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qr-title-text">
+    <div class="qr-modal-content">
+      <button class="qr-close" aria-label="بستن" data-i18n-attr="aria-label:ui.close">&times;</button>
+      <h3 class="qr-title" id="qr-title-text" data-i18n="donate.qr_scan">آدرس را اسکن کنید</h3>
+      <canvas id="qr-canvas" width="220" height="220"></canvas>
+      <p class="qr-address" id="qr-address-text"></p>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="nav">
+    <p class="nav-logo">monsmain<span>_</span></p>
+
+    <button class="hamburger" id="hamburger" aria-label="منو" aria-expanded="false" data-i18n-attr="aria-label:ui.menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button class="menu-overlay" id="menu-overlay" aria-label="بستن" tabindex="-1" data-i18n-attr="aria-label:ui.close"></button>
+
+    <div class="menu-panel" id="menu-panel" role="menu">
+      <ul class="menu-links">
+        <li><a href="../" data-i18n="nav.home" role="menuitem">خانه</a></li>
+        <li><a href="../#about" data-i18n="nav.about" role="menuitem">درباره من</a></li>
+        <li><a href="../#projects" data-i18n="nav.projects" role="menuitem">پروژه‌ها</a></li>
+        <li><a href="../#skills" data-i18n="nav.skills" role="menuitem">مهارت‌ها</a></li>
+        <li><a href="../blog/" data-i18n="nav.blog" role="menuitem">بلاگ</a></li>
+        <li><a href="#" class="active essential" data-i18n="nav.donate" role="menuitem">حمایت</a></li>
+        <li><a href="../#contact" data-i18n="nav.contact" role="menuitem">تماس</a></li>
+      </ul>
+      <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="fa">FA</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="donate-container">
+    <div style="height:5rem;flex:0 0 auto"></div>
+
+    <header class="donate-header">
+      <img src="images/Logo.png" alt="monsmain" class="main-logo" loading="eager">
+      <h1 data-i18n="donate.main_title">حمایت از فعالیت من</h1>
+      <p data-i18n="donate.main_subtitle">کمک شما به من انگیزه می‌دهد.</p>
+    </header>
+
+    <!-- Tabs -->
+    <nav id="tab-container" class="tab-nav" role="tablist" aria-label="Donation method">
+      <button class="tab-btn active" data-tab="crypto" role="tab" aria-selected="true">
+        <span class="tab-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/>
+            <path d="M12 2v20"/>
+            <path d="M2 7l10 5 10-5"/>
+          </svg>
+        </span>
+        <span class="tab-label" data-i18n="donate.tab_crypto">ارز دیجیتال</span>
+        <span class="tab-desc" data-i18n="donate.tab_crypto_desc">USDT، ترون، اتریوم...</span>
+      </button>
+      <button class="tab-btn" data-tab="rial" role="tab" aria-selected="false">
+        <span class="tab-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <path d="M2 10h20"/>
+          </svg>
+        </span>
+        <span class="tab-label" data-i18n="donate.tab_rial">ریالی (تومان)</span>
+        <span class="tab-desc" data-i18n="donate.tab_rial_desc">پرداخت به تومان</span>
+      </button>
+    </nav>
+
+    <!-- Crypto panel -->
+    <section class="tab-panel active" data-panel="crypto" role="tabpanel" aria-label="Crypto donations">
+      <main id="wallet-container"></main>
+    </section>
+
+    <!-- Rial panel -->
+    <section class="tab-panel" data-panel="rial" role="tabpanel" aria-label="Rial donations">
+      <main id="rial-container"></main>
+    </section>
+
+    <!-- Footer -->
+    <footer class="donate-footer">
+      <div class="social-links">
+        <a href="https://github.com/monsmain" target="_blank" aria-label="GitHub" rel="noopener" class="social-link" data-i18n-attr="aria-label:contact.github">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.46 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://t.me/monsmain" target="_blank" aria-label="Telegram" rel="noopener" class="social-link" data-i18n-attr="aria-label:contact.telegram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.504 1.201-.828 1.23-.704.065-1.239-.466-1.919-.917-1.067-.7-1.669-1.137-2.704-1.818-1.197-.789-.421-1.225.262-1.932.176-.183 3.227-2.959 3.288-3.209.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.914.49-1.302.48-.428-.008-1.252-.242-1.865-.442-.752-.244-1.349-.374-1.297-.789.027-.216.324-.437.892-.662 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </a>
+        <a href="https://youtube.com/monsmain" target="_blank" aria-label="YouTube" rel="noopener" class="social-link" data-i18n-attr="aria-label:contact.youtube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://x.com/mons_main" target="_blank" aria-label="X" rel="noopener" class="social-link" data-i18n-attr="aria-label:contact.x">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <p style="margin-top:1rem" data-i18n="donate.footer_thanks">از حمایت شما سپاسگزارم❤️</p>
+    </footer>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-top" aria-label="Back to top" data-i18n-attr="aria-label:footer.back_top">↑</button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+  <script src="../assets/js/i18n.js"></script>
+  <script type="module" src="../assets/js/app.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

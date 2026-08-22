@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" data-i18n-attr="content:blog.coming_soon_desc" content="Blog of monsmain — articles about security tools, Go, and ethical hacking. Coming soon.">
+  <meta name="theme-color" content="#05070f">
+  <meta property="og:title" content="monsmain — Blog">
+  <meta property="og:description" content="Thoughts & tutorials from monsmain.">
+  <meta property="og:type" content="website">
+  <title data-i18n="blog.title">بلاگ</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body class="lang-fa">
+  <div id="transition-overlay" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navbar -->
+  <nav class="nav">
+    <a href="../" class="nav-logo">monsmain<span>_</span></a>
+
+    <button class="hamburger" id="hamburger" aria-label="منو" aria-expanded="false" data-i18n-attr="aria-label:ui.menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button class="menu-overlay" id="menu-overlay" aria-label="بستن" tabindex="-1" data-i18n-attr="aria-label:ui.close"></button>
+
+    <div class="menu-panel" id="menu-panel" role="menu">
+      <ul class="menu-links">
+        <li><a href="../" data-i18n="nav.home" role="menuitem">خانه</a></li>
+        <li><a href="../#about" data-i18n="nav.about" role="menuitem">درباره من</a></li>
+        <li><a href="../#projects" data-i18n="nav.projects" role="menuitem">پروژه‌ها</a></li>
+        <li><a href="../#skills" data-i18n="nav.skills" role="menuitem">مهارت‌ها</a></li>
+        <li><a href="#" class="active essential" data-i18n="nav.blog" role="menuitem">بلاگ</a></li>
+        <li><a href="../donate/" class="essential" data-i18n="nav.donate" role="menuitem">حمایت</a></li>
+        <li><a href="../#contact" data-i18n="nav.contact" role="menuitem">تماس</a></li>
+      </ul>
+      <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="fa">FA</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <div style="height:4rem"></div>
+
+    <section class="hero reveal" id="blog-hero" style="min-height:auto">
+      <div class="section-header" style="margin-bottom:1rem">
+        <p class="section-subtitle" data-i18n="blog.subtitle">افکار و آموزش‌ها</p>
+        <h1 class="hero-name" style="font-size:clamp(2rem,6vw,3.5rem)" data-i18n="blog.title">بلاگ</h1>
+      </div>
+    </section>
+
+    <section class="reveal" id="coming-soon" style="text-align:center">
+      <div class="about-content">
+        <p class="hero-role" style="font-size:1.4rem" data-i18n="blog.coming_soon">به زودی</p>
+        <p class="about-text" style="display:block;color:var(--text-secondary);line-height:1.8;margin-top:1rem" data-i18n="blog.coming_soon_desc">من در حال نوشتن مقالاتی درباره ابزارهای امنیتی، Go و هک اخلاقی هستم.</p>
+        <a href="../" class="nav-back" style="margin-top:2.5rem" data-i18n="blog.back_home">بازگشت به خانه</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-built" data-i18n="footer.built">ساخته شده با ❤️</p>
+    <p data-i18n="footer.copyright">© 2026 monsmain. تمام حقوق محفوظ است.</p>
+  </footer>
+
+  <button class="back-to-top" id="back-top" aria-label="Back to top" data-i18n-attr="aria-label:footer.back_top">↑</button>
+
+  <!-- Scripts -->
+  <script src="../assets/js/i18n.js"></script>
+  <script type="module" src="../assets/js/app.js"></script>
+</body>
+</html>
